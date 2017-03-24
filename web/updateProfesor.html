@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Actualizaciones Profesores</title>
+
+	<link rel="stylesheet" href="assets/demo.css">
+	<link rel="stylesheet" href="assets/form-register.css">
+
+</head>
+<!-- Es una lista desordenada. Las <a> definen propiedades comunes -->
+    <ul>
+        <li><a href="index.htm">Index</a></li>
+        <li><a href="registroProfesores.html" class="active">Nuevo profesor</a></li>
+        <li><a href="updateProfesor.html">Actualizar profesor</a></li>
+        <li><a href="borrarProfesor.html" class="active">Borrar profesor</a></li>
+        <li><a href="verProfesor.html">Ver profesor</a></li>
+    </ul>
+
+
+    <div class="main-content">
+
+        <!-- esta pagina HTML tiene que estar montada sobre un entorno SERVIDOR (servlet o JPA...) -->
+
+        <form class="form-register" method="post" action="/InstitutoWeb/controladorServletProfesor">
+
+            <div class="form-register-with-email">
+
+                <div class="form-white-background">
+
+                    <div class="form-title-row">
+                        <h1>ACTUALIZAR PROFESOR</h1>
+                    </div>
+
+                    <div class="form-row">
+                        <label>
+                            <span>Nombre</span>
+                            <input type="text" name="nombre">
+                        </label>
+                    </div>
+
+                    <div class="form-row">
+                        <label>
+                            <span>Apellido</span>
+                            <input type="password" name="apellido">
+                        </label>
+                    </div>
+
+                    <div class="form-row">
+                        <label>
+<!--   CAMBIAMOS EL ORDEN DEL FORMULARIO PARA AJUSTARNOS A LA CONSULTA SQL      -->
+                            <span>ID</span>
+                            <input type="text" name="idprofesor">
+                        </label>
+                    </div>
+                    
+                    <div class="form-row">
+                        <label class="form-checkbox">
+                            <input type="checkbox" name="checkbox" checked>
+                            <span> Aceptar <a href="#">Volver al index</a></span>
+                        </label>
+                    </div>
+
+                    <div class="form-row">
+                        <button type="submit">Registrarsus</button>
+                    </div>
+
+                </div>
+
+                <a href="index.html" class="form-log-in-with-existing">¿Estas registrado? Entra aqui moreno &rarr;</a>
+
+            </div>
+
+            <div class="form-sign-in-with-social">
+
+                <div class="form-row form-title-row">
+                    <span class="form-title">Menu administracion</span>
+                </div>
+
+                <a href="#" class="form-google-button">Baja</a>
+                <a href="#" class="form-facebook-button">Alta</a>
+                <a href="#" class="form-twitter-button">Actualizar</a>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>
