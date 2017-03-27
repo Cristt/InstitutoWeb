@@ -22,35 +22,44 @@ public class ControladorServletAlumno extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, ClassNotFoundException, SQLException {
- HttpSession misession = (HttpSession) request.getSession();
+        HttpSession misession = (HttpSession) request.getSession();
         boolean log = (boolean) misession.getAttribute("ok");
         //si el usuario esta logeado
         if (log == true) {
-            
+
             //recupera el action del formulario
             String action = request.getParameter("action");
 
-            if (action.contains("update")) {
+            if (action.contains("actualizar")) {
 
-                BoAlumno.procesarInsertarPeticionAlumno(request, response);
+                BoAlumno.procesarActualizarAlumno(request, response);
 
             } else {
 
-                BoAlumno.procesarUpdateAlumno(request, response);
+                response.sendRedirect("/InstitutoWeb/indexAlumno.html");
 
             }
+            if (action.contains("insertar")) {
 
-        } 
-        //si el usuario no esta loegado hace el else{}
-        else {
-            response.sendRedirect("/InstitutoWeb/indexProfesor.html");
+                BoAlumno.procesarInsertarAlumno(request, response);
+
+            } //si el usuario no esta loegado hace el else{}
+            else {
+                response.sendRedirect("/InstitutoWeb/indexAlumno.html");
+
+            }
+            if (action.contains("ver")) {
+
+                BoAlumno.procesarVerAlumno(request, response);
+
+            } else {
+
+                response.sendRedirect("/InstitutoWeb/indexAlumno.html");
+
+            }
         }
-           response.sendRedirect("/InstitutoWeb/MostrarServletAlumno");
+    }
 
-            } 
-         
-        
-   
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -71,11 +80,9 @@ public class ControladorServletAlumno extends HttpServlet {
         }
     }
 
-    
     @Override
     public String getServletInfo() {
         return "Short description";
     }
 
 }
-

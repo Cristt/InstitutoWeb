@@ -5,6 +5,18 @@
         <servlet-class>controladoresServlet.ControladorServletAlumno</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>CreaSession</servlet-name>
+        <servlet-class>controladoresServlet.CreaSession</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>VerSession</servlet-name>
+        <servlet-class>controladoresServlet.VerSession</servlet-class>
+    </servlet>
+     <servlet>
+        <servlet-name>LogInstituto</servlet-name>
+        <servlet-class>controladoresServlet.LogInstituto</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>ControladorServletProfesor</servlet-name>
         <servlet-class>controladoresServlet.ControladorServletProfesor</servlet-class>
     </servlet>
@@ -31,6 +43,10 @@
     <welcome-file-list>
         <welcome-file>index.htm</welcome-file>
     </welcome-file-list>
+       <servlet-mapping>
+        <servlet-name>LogInstituto</servlet-name>
+        <url-pattern>/LogInstituto</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>MostrarServletProfesor</servlet-name>
         <url-pattern>/mostrarServletProfesor</url-pattern>
@@ -38,6 +54,14 @@
     <servlet-mapping>
         <servlet-name>MostrarServletAlumno</servlet-name>
         <url-pattern>/mostrarServletAlumno</url-pattern>
+    </servlet-mapping>
+     <servlet-mapping>
+        <servlet-name>CreaSession</servlet-name>
+        <url-pattern>/CreaSession</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>VerSession</servlet-name>
+        <url-pattern>/VerSession</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

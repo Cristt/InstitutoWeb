@@ -8,7 +8,6 @@ package Utilidades;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 
 /**
@@ -17,12 +16,12 @@ import java.sql.SQLException;
  */
 public class VerificarLogin {
     
-    public static boolean comprobarLogin(String usuario,String password) throws ClassNotFoundException, SQLException{
+    public static boolean comprobarLogin(String nombre,String apellido) throws ClassNotFoundException, SQLException{
        
       //esta variable no hace nada
        
         boolean nRegistro = false;
-        String consultaSQL = "select * from profesor where nombre=? and apellido =?";
+        String consultaSQL = "select * from institutoweb where nombre='" + nombre + "' AND apellido='" + apellido + "'";
         Connection con=ConexionInstitutoWeb.ConexionInstitutoWeb();
         PreparedStatement comprobarLogin=con.prepareStatement(consultaSQL);
         

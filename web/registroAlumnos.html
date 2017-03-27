@@ -16,15 +16,9 @@
 
 
     <ul>
-        <li><a href="index.htm">Index</a></li>
-        <li>|||</li>
-        <li><a href="registroAlumnos.html" class="active">Nuevo alumno</a></li>
-        <li>|||</li>
-        <li><a href="updateAlumno.html">Actualizar Alumno</a></li>
-        <li>|||</li>
-        <li><a href="borrarAlumno.html" class="active">Borrar Alumno</a></li>
-        <li>|||</li>
-        <li><a href="verAlumno.html">Ver Alumno</a></li>
+       <li> <a href="indexProfesor.htm">PROFESORES</a> </li>
+       <li>|||</li>
+       <li><a href="indexAlumno.htm">ALUMNOS</a></li>
     </ul>
 
 
@@ -32,32 +26,32 @@
 
         <!-- You only need this form and the form-login.css -->
 
-        <form class="form-login" method="post" action="/InstitutoWeb/controladorServletAlumno">
+        <form class="form-login" method="post" action="/InstitutoWeb/ControladorServletAlumno">
 
             <div class="form-log-in-with-email">
 
                 <div class="form-white-background">
 
                     <div class="form-title-row">
-                        <h1>Alta Alumno</h1>
+                        <h1>Alumno</h1>
                     </div>
-                    <div class="form-row">
+                       <div class="form-row">
                         <label>
                             <span>ID</span>
-                            <input type="text" name="idalumno">
+                            <input type="text" name="login_id">
                         </label>
                     </div>
                     <div class="form-row">
                         <label>
                             <span>Nombre</span>
-                            <input type="text" name="nombre">
+                            <input type="text" name="login_usuario">
                         </label>
                     </div>
 
                     <div class="form-row">
                         <label>
-                            <span>Apellido</span>
-                            <input type="text" name="apellido">
+                            <span>Password</span>
+                            <input type="text" name="login_password">
                         </label>
                     </div>
                     <div class="form-row">

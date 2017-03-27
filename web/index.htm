@@ -1,40 +1,73 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <link href="assets/style.css" rel="stylesheet" type="text/css"/>
-        <title>INICIO INSTITUTO</title>
-    </head>
-    <body>
-        <div id="holder">																																																																																																																																																																																																																																																																																					<div></div>																															
-            <!--BEGIN OF TERMS OF USE. DO NOT EDIT OR DELETE THESE LINES. IF YOU EDIT OR DELETE THESE LINES AN ALERT MESSAGE MAY APPEAR WHEN TEMPLATE WILL BE ONLINE-->
-            <div id="footer_terms">
-                <p>PRINCIPAL INSTITUTO</p>
-            </div>
-            <!--END OF TERMS OF USE-->
-            <!-- HEADER -->
-            <div id="header"> <a href="index.html"> <img src="images/restaurantes.jpg" alt="logo" width="800" height="200" title="Restaurante Web"/> </a> </div>
-            <!-- END HEADER -->
-            <div id="shadow">
-                <!-- MENU -->
-                <ul id="menu">
-                    <li> <a href="indexProfesor.htm">PROFESORES</a> </li>
-                    <li>|||</li>
-                    <li><a href="indexAlumno.htm">ALUMNOS</a></li>
-                </ul>
-                <div class="clear"></div>
-                
-                <div id="toal"> </div>
+<html>
 
-                <div class="clear"></div>
-                <!-- END SHADOW -->
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>INICIO INSTITUTO</title>
+
+        <link rel="stylesheet" href="assets/demo.css">
+        <link rel="stylesheet" href="assets/form-login.css">
+
+    </head>
+
+    <div class="main-content">
+
+        <!-- You only need this form and the form-login.css -->
+
+        <form class="form-login" method="post" action="/InstitutoWeb/LogInstituto">
+
+            <div class="form-log-in-with-email">
+
+                <div class="form-white-background">
+
+                    <div class="form-title-row">
+                        <h1>DATOS USUARIO</h1>
+                    </div>
+
+                    <div class="form-row">
+                        <label>
+                            <span>Nombre</span>
+                            <input type="text" name="login_usuario">
+                        </label>
+                    </div>
+
+                    <div class="form-row">
+                        <label>
+                            <span>Password</span>
+                            <input type="text" name="login_password">
+                        </label>
+                    </div>
+                    <div class="form-row">
+                        <button type="submit">Registrar</button>
+                    </div>
+
+                </div>
+
+                <a href="#" class="form-forgotten-password">Forgotten password &middot;</a>
+                <a href="#" class="form-create-an-account">Create an account &rarr;</a>
+
             </div>
-            <!-- FOOTER -->
-            <div id="footer">
-                <p>My Company &copy;2009 I <a href="#">Contact</a> </p>
+
+            <div class="form-sign-in-with-social">
+
+                <div class="form-row form-title-row">
+                    <span class="form-title">Sign in with</span>
+                </div>
+
+                <a href="#" class="form-google-button">Google</a>
+                <a href="#" class="form-facebook-button">Facebook</a>
+                <a href="#" class="form-twitter-button">Twitter</a>
+
             </div>
-            <!-- END FOOTER -->
-        </div>
-        <!-- END HOLDER -->
-    </body>
+
+        </form>
+
+    </div>
+
+</body>
+
 </html>

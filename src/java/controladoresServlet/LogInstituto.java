@@ -7,7 +7,6 @@ package controladoresServlet;
 
 import Utilidades.VerificarLogin;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -22,9 +21,8 @@ public class LogInstituto extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, ClassNotFoundException, SQLException {
 
-        //solicito los parametros de login.html
-        String user_nombre = request.getParameter("nombre");
-        String pass_apellido = request.getParameter("apellido");
+        String user_nombre = request.getParameter("login_usuario");
+        String pass_apellido = request.getParameter("login_password");
 
         boolean verificarUsuario = VerificarLogin.comprobarLogin(user_nombre, pass_apellido);
 
@@ -38,37 +36,15 @@ public class LogInstituto extends HttpServlet {
             sesion_login.setAttribute("login_password", pass_apellido);
             sesion_login.setAttribute("ok", verificarUsuario);
 
-            response.sendRedirect("/RestauranteGit/registroProfesores.html");
+            response.sendRedirect("/InstitutoWeb/indice.html");
         } else {
 
-            response.sendRedirect("/RestauranteGit/index.htm");
-
+            response.sendRedirect("/InstitutoWeb/index.htm");
         }
 
-        /*response.setContentType("text/html;charset=UTF-8");
-         try (PrintWriter out = response.getWriter()) {
-            
-         out.println("<!DOCTYPE html>");
-         out.println("<html>");
-         out.println("<head>");
-         out.println("<title>Servlet LogRestaurante</title>");            
-         out.println("</head>");
-         out.println("<body>");
-         out.println("<h1>Servlet LogRestaurante at " + request.getContextPath() + "</h1>");
-         out.println("</body>");
-         out.println("</html>");
-         }*/
+
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -79,14 +55,6 @@ public class LogInstituto extends HttpServlet {
         }
     }
 
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
