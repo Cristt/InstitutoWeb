@@ -10,7 +10,7 @@ import java.sql.Statement;
 public class DaoProfesor {
      public static void insertarProfesor(int idprofesor, String nombre, String apellido) throws SQLException, ClassNotFoundException {
 
-        Connection conexion = ConexionInstitutoWeb.ConexionInstitutoWeb();
+        Connection conexion = ConexionInstitutoWeb.conexionInstitutoWeb();
         Statement sentencia = conexion.createStatement();
         String consultaSQL = "insert into profesor (idprofesor,nombre,apellido) values ";
         consultaSQL += "('" + idprofesor + "','" + nombre + "','" + apellido + "')";
@@ -21,7 +21,7 @@ public class DaoProfesor {
     
     public static ResultSet verProfesor(int idprofesor, String nombre, String apellido) throws ClassNotFoundException, SQLException{
     
-    Connection conexion = ConexionInstitutoWeb.ConexionInstitutoWeb();
+    Connection conexion = ConexionInstitutoWeb.conexionInstitutoWeb();
     String consultaSQL = "select idprofesor,nombre,apellido,ListaProfesorAsignatura from profesor";
     PreparedStatement mostrar = conexion.prepareStatement(consultaSQL);
     mostrar.setInt(1, idprofesor);
@@ -36,7 +36,7 @@ public class DaoProfesor {
     
     public static void actualizarProfesor(int idprofesor, String nombre, String apellido) throws SQLException, ClassNotFoundException{
     
-        Connection conexion = ConexionInstitutoWeb.ConexionInstitutoWeb();
+        Connection conexion = ConexionInstitutoWeb.conexionInstitutoWeb();
         String consultaSQL = "update profesor set nombre=?,apellido=? where idprofesor=?";
         PreparedStatement actualizar = conexion.prepareStatement(consultaSQL);
         actualizar.setString(1, nombre);
@@ -49,7 +49,7 @@ public class DaoProfesor {
     }
     
      public static void borrarProfesor(int idprofesor, String nombre, String apellido) throws SQLException, ClassNotFoundException {
-        Connection conexion = ConexionInstitutoWeb.ConexionInstitutoWeb();
+        Connection conexion = ConexionInstitutoWeb.conexionInstitutoWeb();
         String consultaSQL = "delete  nombre=?, apellido=? from profesor where idprofesor=?";
         PreparedStatement borrar = conexion.prepareStatement(consultaSQL);
         borrar.setString(1, nombre);

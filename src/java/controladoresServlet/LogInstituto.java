@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package controladoresServlet;
 
 import Utilidades.VerificarLogin;
@@ -22,9 +18,9 @@ public class LogInstituto extends HttpServlet {
             throws ServletException, IOException, ClassNotFoundException, SQLException {
 
         String user_nombre = request.getParameter("login_usuario");
-        String pass_apellido = request.getParameter("login_password");
+        String user_apellido = request.getParameter("login_password");
 
-        boolean verificarUsuario = VerificarLogin.comprobarLogin(user_nombre, pass_apellido);
+        boolean verificarUsuario = VerificarLogin.comprobarLogin(user_nombre, user_apellido);
 
         if (verificarUsuario == true) {
                 //esta variable nos sirve para comprobar 
@@ -33,7 +29,7 @@ public class LogInstituto extends HttpServlet {
             HttpSession sesion_login = request.getSession();
             //guardo en la sesion 
             sesion_login.setAttribute("login_usuario", user_nombre);
-            sesion_login.setAttribute("login_password", pass_apellido);
+            sesion_login.setAttribute("login_password", user_apellido);
             sesion_login.setAttribute("ok", verificarUsuario);
 
             response.sendRedirect("/InstitutoWeb/indice.html");
