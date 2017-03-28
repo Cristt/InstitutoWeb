@@ -16,11 +16,12 @@ public class LogInstituto extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, ClassNotFoundException, SQLException {
-
+        
+        int user_id = Integer.parseInt(request.getParameter("user_id"));
         String user_nombre = request.getParameter("login_usuario");
         String user_apellido = request.getParameter("login_password");
 
-        boolean verificarUsuario = VerificarLogin.comprobarLogin(user_nombre, user_apellido);
+        boolean verificarUsuario=VerificarLogin.comprobarLogin(user_id, user_nombre, user_apellido);
 
         if (verificarUsuario == true) {
                 //esta variable nos sirve para comprobar 
@@ -28,6 +29,7 @@ public class LogInstituto extends HttpServlet {
             
             HttpSession sesion_login = request.getSession();
             //guardo en la sesion 
+            sesion_login.setAttribute("login_id", user_id);
             sesion_login.setAttribute("login_usuario", user_nombre);
             sesion_login.setAttribute("login_password", user_apellido);
             sesion_login.setAttribute("ok", verificarUsuario);
@@ -41,6 +43,7 @@ public class LogInstituto extends HttpServlet {
 
     }
 
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -61,14 +64,9 @@ public class LogInstituto extends HttpServlet {
         }
     }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
     @Override
     public String getServletInfo() {
         return "Short description";
-    }// </editor-fold>
+    }
 
 }

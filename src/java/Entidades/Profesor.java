@@ -2,72 +2,60 @@
 package Entidades;
 
 
-public class Profesor extends Persona{
+public class Profesor{
     
     private int idprofesor;
-    private String direccion;
-    private String telefono;
+    private String nombre;
+    private String apellido;
  
     private String ListaProfesorAsignatura;
 
-        public Profesor() {
-            super();
-    }
-    
-    public Profesor(String direccion, String telefono, int idprofesor, String ListaProfesorAsignatura, String nombre, String apellidos, int edad) {
-        super(nombre, apellidos, edad);
-        this.direccion = direccion;
-        this.telefono = telefono;
+    public Profesor(int idprofesor, String nombre, String apellido, String ListaProfesorAsignatura) {
+        super ();
         this.idprofesor = idprofesor;
+        this.nombre = nombre;
+        this.apellido = apellido;
         this.ListaProfesorAsignatura = ListaProfesorAsignatura;
+    }
+
+    public Profesor() {
+        super();
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public int getIdprofesor() {
+        return idprofesor;
+    }
+
+    public void setIdprofesor(int idprofesor) {
+        this.idprofesor = idprofesor;
     }
 
     public String getListaProfesorAsignatura() {
         return ListaProfesorAsignatura;
     }
 
-    public String setListaProfesorAsignatura() {
+    public void setListaProfesorAsignatura(String ListaProfesorAsignatura) {
         this.ListaProfesorAsignatura = ListaProfesorAsignatura;
-        return null;
-    }
-
-    public void setListaProfesorAsignatura(String parameter) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public String getDireccion() {
-        return direccion;
-    }
-
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
-
-    public String getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
-
-    public int getidprofesor() {
-        return idprofesor;
-    }
-
-    public void idprofesor(int idProfesor) {
-        this.idprofesor = idProfesor;
-    }
-
-    public void setidProfesor(String parameter) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-   
-
-
     }
     
+    
+}
     
   
     

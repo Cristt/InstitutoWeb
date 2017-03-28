@@ -17,22 +17,22 @@ public class BoAlumno {
 
         Alumno Alumno = new Alumno();
         //recojemos los datos del formulario
-        Alumno.setidAlumno(request.getParameter("idalumno"));
+        Alumno.setIdalumno(Integer.parseInt(request.getParameter("idalumno")));
         Alumno.setNombre(request.getParameter("nombre"));
         Alumno.setApellido(request.getParameter("apellido"));
         Alumno.setListaAlumnoProfesor(request.getParameter("String ListaAlumnoProfesor"));
-        DaoAlumno.insertarAlumno(Alumno.getidalumno(), Alumno.getNombre(),Alumno.getApellido());
-        response.sendRedirect("/InstitutoWeb/mostrarServletAlumno");
+        DaoAlumno.insertarAlumno(Alumno.getIdalumno(), Alumno.getNombre(),Alumno.getApellido());
+        response.sendRedirect("/InstitutoWeb/index.htm");
 
     }
 
     public static void procesarActualizarAlumno(HttpServletRequest request,HttpServletResponse response) throws ClassNotFoundException, SQLException, IOException{
         
    Alumno Alumno = new Alumno();
-   Alumno.setidAlumno(request.getParameter("1"));
+   Alumno.setIdalumno(Integer.parseInt(request.getParameter("idalumno")));
    Alumno.setNombre(request.getParameter("nombre"));
    Alumno.setApellido(request.getParameter("apellido"));
-   DaoAlumno.actualizaralumno(Alumno.getidalumno(), Alumno.getNombre(),Alumno.getApellido());
+   DaoAlumno.actualizaralumno(Alumno.getIdalumno(), Alumno.getNombre(),Alumno.getApellido());
    
     //pendiente devolver a la vista  para mostrar el resultado 
     response.sendRedirect("/InstitutoWeb/mostrarServletAlumno");
@@ -40,10 +40,10 @@ public class BoAlumno {
     public static void procesarVerAlumno(HttpServletRequest request,HttpServletResponse response) throws ClassNotFoundException, SQLException, IOException{
         
    Alumno Alumno = new Alumno();
-   Alumno.setidAlumno(request.getParameter("1"));
+   Alumno.setIdalumno(Integer.parseInt(request.getParameter("idalumno")));
    Alumno.setNombre(request.getParameter("nombre"));
    Alumno.setApellido(request.getParameter("apellido"));
-   DaoAlumno.verAlumno(Alumno.getidalumno(), Alumno.getNombre(),Alumno.getApellido());
+   DaoAlumno.verAlumno(Alumno.getIdalumno(), Alumno.getNombre(),Alumno.getApellido());
     //pendiente devolver a la vista  para mostrar el resultado 
     response.sendRedirect("/InstitutoWeb/mostrarServletAlumno");
     }

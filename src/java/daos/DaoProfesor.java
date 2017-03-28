@@ -22,7 +22,7 @@ public class DaoProfesor {
     public static ResultSet verProfesor(int idprofesor, String nombre, String apellido) throws ClassNotFoundException, SQLException{
     
     Connection conexion = ConexionInstitutoWeb.conexionInstitutoWeb();
-    String consultaSQL = "select idprofesor,nombre,apellido,ListaProfesorAsignatura from profesor";
+    String consultaSQL = "select idprofesor,nombre,apellido from profesor";
     PreparedStatement mostrar = conexion.prepareStatement(consultaSQL);
     mostrar.setInt(1, idprofesor);
     mostrar.setString(2, nombre);
@@ -50,7 +50,7 @@ public class DaoProfesor {
     
      public static void borrarProfesor(int idprofesor, String nombre, String apellido) throws SQLException, ClassNotFoundException {
         Connection conexion = ConexionInstitutoWeb.conexionInstitutoWeb();
-        String consultaSQL = "delete  nombre=?, apellido=? from profesor where idprofesor=?";
+        String consultaSQL = "delete  nombre, apellido from profesor where idprofesor=?";
         PreparedStatement borrar = conexion.prepareStatement(consultaSQL);
         borrar.setString(1, nombre);
         borrar.setString(2, apellido);

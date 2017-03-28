@@ -28,13 +28,13 @@
         <servlet-name>MostrarServletProfesor</servlet-name>
         <servlet-class>controladoresServlet.MostrarServletProfesor</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>VerificarLogin</servlet-name>
+        <servlet-class>utilidades.VerificarLogin</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ControladorServletAlumno</servlet-name>
         <url-pattern>/controladorServletAlumno</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>MostrarServletProfesor</servlet-name>
-        <url-pattern>/mostrarServletProfesor</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ControladorServletProfesor</servlet-name>
@@ -43,10 +43,6 @@
     <welcome-file-list>
         <welcome-file>index.htm</welcome-file>
     </welcome-file-list>
-    <servlet-mapping>
-        <servlet-name>MostrarServletProfesor</servlet-name>
-        <url-pattern>/mostrarServletProfesor</url-pattern>
-    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>MostrarServletAlumno</servlet-name>
         <url-pattern>/mostrarServletAlumno</url-pattern>
@@ -62,6 +58,14 @@
     <servlet-mapping>
         <servlet-name>LogInstituto</servlet-name>
         <url-pattern>/logInstituto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MostrarServletProfesor</servlet-name>
+        <url-pattern>/mostrarServletProfesor</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>VerificarLogin</servlet-name>
+        <url-pattern>/verificarLogin</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

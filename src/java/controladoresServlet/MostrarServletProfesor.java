@@ -42,6 +42,7 @@ public class MostrarServletProfesor extends HttpServlet {
                 out.println("<p>ID alumno: " + rs.getString(1) + "</p>");
                 out.println("<p> Nombre" + rs.getString(2) + "</p>");
                 out.println("<p> Apellido" + rs.getString(3) + "</p>");
+                out.println("<p> ListaProfesorAsignatura" + rs.getString(4) + "</p>");
                 
             }
 

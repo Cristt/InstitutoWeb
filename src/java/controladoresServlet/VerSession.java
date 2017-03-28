@@ -29,7 +29,7 @@ public class VerSession extends HttpServlet {
         Profesor miProfesor = (Profesor) misession.getAttribute("ejemploSesion");
 
         PrintWriter pw = response.getWriter();
-        pw.println("<html><body>" + miProfesor.getidprofesor()+ "," + miProfesor.getNombre() + "," + miProfesor.getApellido());
+        pw.println("<html><body>" + miProfesor.getIdprofesor()+ "," + miProfesor.getNombre() + "," + miProfesor.getApellido());
         pw.println("<h2>"+misession.getCreationTime()+"</h2>");
         pw.println("<h2>"+misession.isNew()+"</h2>");
         pw.println("<h2>"+misession.getLastAccessedTime()+"</h2>");

@@ -28,9 +28,9 @@ public class CreaSession extends HttpServlet {
         HttpSession sesionRestaurante=request.getSession(true);
 
         Profesor ultimo_profesor=new Profesor();
-        ultimo_profesor.setidProfesor("1");
-        ultimo_profesor.setNombre("josefff");
-        ultimo_profesor.setApellido("warner");
+        ultimo_profesor.setIdprofesor(3);
+        ultimo_profesor.setNombre("perico");
+        ultimo_profesor.setApellido("garcia");
         
      
         

@@ -8,12 +8,12 @@ import java.sql.SQLException;
 
 public class VerificarLogin {
     
-    public static boolean comprobarLogin(String nombre,String apellido) throws ClassNotFoundException, SQLException{
+    public static boolean comprobarLogin(int idadministrador, String nombre,String apellido) throws ClassNotFoundException, SQLException{
        
       //esta variable no hace nada
        
         boolean nRegistro = false;
-        String consultaSQL = "select * from institutoweb where nombre='"+nombre+"' AND apellido='"+ apellido +"'";
+        String consultaSQL = "select * from administrador where idadministrador=? , nombre=? and password=?";
         Connection con=ConexionInstitutoWeb.conexionInstitutoWeb();
         PreparedStatement comprobarLogin=con.prepareStatement(consultaSQL);
         

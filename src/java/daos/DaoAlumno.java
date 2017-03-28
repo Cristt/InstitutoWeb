@@ -47,11 +47,11 @@ public class DaoAlumno {
     
      public static void borraralumno(int idalumno, String nombre, String apellido) throws SQLException, ClassNotFoundException {
         Connection conexion = ConexionInstitutoWeb.conexionInstitutoWeb();
-        String consultaSQL = "delete nombre=?, apellido=? from alumno where idalumno=?";
+        String consultaSQL = "delete nombre, apellido from alumno where idalumno=?";
         PreparedStatement borrar = conexion.prepareStatement(consultaSQL);
-        borrar.setInt(1, idalumno);
-        borrar.setString(2, nombre);
-        borrar.setString(3, apellido);
+        borrar.setString(1, nombre);
+        borrar.setString(2, apellido);
+        borrar.setInt(3, idalumno);
         int filasAfectadas = borrar.executeUpdate();
         System.out.println("Filas afectadas: " + filasAfectadas);
     }

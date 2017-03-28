@@ -15,7 +15,7 @@ public class ConexionInstitutoWeb {
         String password = "root";
 
         Class.forName(classname);
-        conexion = DriverManager.getConnection("jdbc:mysql://localhost/institutoweb", "root", "root");
+        conexion = DriverManager.getConnection(url, user, password);
 
         if (conexion != null) {
 
