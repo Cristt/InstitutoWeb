@@ -45,6 +45,17 @@ public class BoProfesor {
     //pendiente devolver a la vista  para mostrar el resultado 
     response.sendRedirect("/InstitutoWeb/mostrarServletProfesor");
     }
+    
+    public static void procesarBorrarProfesor(HttpServletRequest request,HttpServletResponse response) throws ClassNotFoundException, SQLException, IOException{
+        
+     Profesor Profesor = new Profesor();
+    Profesor.setIdprofesor(Integer.parseInt(request.getParameter("idprofesor")));
+    Profesor.setNombre(request.getParameter("nombre"));
+    Profesor.setApellido(request.getParameter("apellido"));
+    DaoProfesor.borrarProfesor(Profesor.getIdprofesor(), Profesor.getNombre(),Profesor.getApellido());
+    //pendiente devolver a la vista  para mostrar el resultado 
+    response.sendRedirect("/InstitutoWeb/mostrarServletProfesor");
+    }
 }
 
     

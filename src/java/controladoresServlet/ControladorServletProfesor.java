@@ -30,30 +30,23 @@ public class ControladorServletProfesor extends HttpServlet {
             if (action.contains("actualizar")) {
 
                 BoProfesor.procesarActualizarProfesor(request, response);
-
-            } else {
-
-                response.sendRedirect("/InstitutoWeb/indexProfesor.html");
-
-            }
+                response.sendRedirect("/InstitutoWeb/indice.html");
+            } 
             if (action.contains("insertar")) {
 
                 BoProfesor.procesarInsertarProfesor(request, response);
-
-            } else {
-
-                response.sendRedirect("/InstitutoWeb/indexProfesor.html");
-
-            }
+                response.sendRedirect("/InstitutoWeb/indice.html");
+            } 
 
             if (action.contains("ver")) {
 
                 BoProfesor.procesarVerProfesor(request, response);
+                response.sendRedirect("/InstitutoWeb/indice.html");
+            }
+            if (action.contains("borrar")) {
 
-            } else {
-
-                response.sendRedirect("/InstitutoWeb/indexProfesor.html");
-
+                BoProfesor.procesarBorrarProfesor(request, response);
+                response.sendRedirect("/InstitutoWeb/indice.html");
             }
         }
     }

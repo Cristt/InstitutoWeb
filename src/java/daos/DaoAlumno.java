@@ -31,7 +31,7 @@ public class DaoAlumno {
     }
 
     
-    public static void actualizaralumno(int idalumno, String nombre,String apellido) throws SQLException, ClassNotFoundException{
+    public static void actualizarAlumno(int idalumno, String nombre,String apellido) throws SQLException, ClassNotFoundException{
     
         Connection conexion = ConexionInstitutoWeb.conexionInstitutoWeb();
         String consultaSQL = "update alumno set nombre=?, apellido=? where idalumno=?";
@@ -45,7 +45,7 @@ public class DaoAlumno {
         conexion.close();
     }
     
-     public static void borraralumno(int idalumno, String nombre, String apellido) throws SQLException, ClassNotFoundException {
+     public static void borrarAlumno(int idalumno, String nombre, String apellido) throws SQLException, ClassNotFoundException {
         Connection conexion = ConexionInstitutoWeb.conexionInstitutoWeb();
         String consultaSQL = "delete nombre, apellido from alumno where idalumno=?";
         PreparedStatement borrar = conexion.prepareStatement(consultaSQL);

@@ -8,15 +8,14 @@ import java.sql.SQLException;
 
 public class VerificarLogin {
     
-    public static boolean comprobarLogin(int idadministrador, String nombre,String apellido) throws ClassNotFoundException, SQLException{
+    public static boolean comprobarLogin(String user_nombre,String user_password) throws ClassNotFoundException, SQLException{
        
       //esta variable no hace nada
        
         boolean nRegistro = false;
-        String consultaSQL = "select * from administrador where idadministrador=? , nombre=? and password=?";
+        String consultaSQL = "select nombre,apellido from administrador where nombre='"+user_nombre+"' and apellido='"+user_password+"'";
         Connection con=ConexionInstitutoWeb.conexionInstitutoWeb();
         PreparedStatement comprobarLogin=con.prepareStatement(consultaSQL);
-        
         ResultSet rs=comprobarLogin.executeQuery(consultaSQL);
        
        if(rs.next()){

@@ -33,34 +33,31 @@ public class ControladorServletAlumno extends HttpServlet {
             if (action.contains("actualizar")) {
 
                 BoAlumno.procesarActualizarAlumno(request, response);
-
-            } else {
-
-                response.sendRedirect("/InstitutoWeb/indexAlumno.html");
-
-            }
+                response.sendRedirect("/InstitutoWeb/indice.html");
+            } 
             if (action.contains("insertar")) {
 
                 BoAlumno.procesarInsertarAlumno(request, response);
+                response.sendRedirect("/InstitutoWeb/indice.html");
 
-            } //si el usuario no esta loegado hace el else{}
-            else {
-                response.sendRedirect("/InstitutoWeb/indexAlumno.html");
-
+            
             }
             if (action.contains("ver")) {
 
                 BoAlumno.procesarVerAlumno(request, response);
+                response.sendRedirect("/InstitutoWeb/indice.html");
 
-            } else {
+            } 
+            if (action.contains("borrar")) {
 
-                response.sendRedirect("/InstitutoWeb/indexAlumno.html");
-
+                BoAlumno.procesarBorrarAlumno(request, response);
+                response.sendRedirect("/InstitutoWeb/indice.html");
             }
+            
         }
     }
 
-    @Override
+@Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
@@ -83,6 +80,5 @@ public class ControladorServletAlumno extends HttpServlet {
     @Override
     public String getServletInfo() {
         return "Short description";
-    }
 
-}
+}}

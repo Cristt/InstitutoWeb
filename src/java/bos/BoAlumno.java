@@ -20,7 +20,7 @@ public class BoAlumno {
         Alumno.setIdalumno(Integer.parseInt(request.getParameter("idalumno")));
         Alumno.setNombre(request.getParameter("nombre"));
         Alumno.setApellido(request.getParameter("apellido"));
-        Alumno.setListaAlumnoProfesor(request.getParameter("String ListaAlumnoProfesor"));
+        //Alumno.setListaAlumnoProfesor(request.getParameter("String ListaAlumnoProfesor"));
         DaoAlumno.insertarAlumno(Alumno.getIdalumno(), Alumno.getNombre(),Alumno.getApellido());
         response.sendRedirect("/InstitutoWeb/index.htm");
 
@@ -32,7 +32,7 @@ public class BoAlumno {
    Alumno.setIdalumno(Integer.parseInt(request.getParameter("idalumno")));
    Alumno.setNombre(request.getParameter("nombre"));
    Alumno.setApellido(request.getParameter("apellido"));
-   DaoAlumno.actualizaralumno(Alumno.getIdalumno(), Alumno.getNombre(),Alumno.getApellido());
+   DaoAlumno.actualizarAlumno(Alumno.getIdalumno(), Alumno.getNombre(),Alumno.getApellido());
    
     //pendiente devolver a la vista  para mostrar el resultado 
     response.sendRedirect("/InstitutoWeb/mostrarServletAlumno");
@@ -44,6 +44,16 @@ public class BoAlumno {
    Alumno.setNombre(request.getParameter("nombre"));
    Alumno.setApellido(request.getParameter("apellido"));
    DaoAlumno.verAlumno(Alumno.getIdalumno(), Alumno.getNombre(),Alumno.getApellido());
+    //pendiente devolver a la vista  para mostrar el resultado 
+    response.sendRedirect("/InstitutoWeb/mostrarServletAlumno");
+    }
+    public static void procesarBorrarAlumno(HttpServletRequest request,HttpServletResponse response) throws ClassNotFoundException, SQLException, IOException{
+        
+   Alumno Alumno = new Alumno();
+   Alumno.setIdalumno(Integer.parseInt(request.getParameter("idalumno")));
+   Alumno.setNombre(request.getParameter("nombre"));
+   Alumno.setApellido(request.getParameter("apellido"));
+   DaoAlumno.borrarAlumno(Alumno.getIdalumno(), Alumno.getNombre(),Alumno.getApellido());
     //pendiente devolver a la vista  para mostrar el resultado 
     response.sendRedirect("/InstitutoWeb/mostrarServletAlumno");
     }
